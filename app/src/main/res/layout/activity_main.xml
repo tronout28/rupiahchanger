@@ -1,18 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#E0E4EF"
     tools:context=".MainActivity">
-
-    <TextView
+    <ImageView
+        android:id="@+id/imgatas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:src="@drawable/grup1"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_below="@+id/imgatas"
+        android:src="@drawable/bank1"
+        android:id="@+id/gambarAtas"
+        android:layout_centerHorizontal="true"
+        android:layout_width="300dp"
+        android:layout_height="200dp"/>
+    <LinearLayout
+        android:layout_below="@id/gambarAtas"
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/border"
+            android:fontFamily="@font/semibold"
+            android:paddingHorizontal="40dp"
+            android:paddingBottom="15dp"
+            android:id="@+id/edinput_uang"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/samaDengan"
+            android:layout_margin="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/semibold"
+            android:paddingLeft="10dp"
+            android:text="="
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/txtHasil_konversi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/semibold"
+            android:textColor="@color/black"
+            android:text="Hasil konversi"
+            android:textSize="20sp"/>
+    />
+
+    </LinearLayout>
+
+
+    <Button
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/linear"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/semibold"
+        android:layout_marginTop="20dp"
+        android:text="Rp > Dollar"
+        android:textSize="20sp"
+        android:id="@+id/btnrpusd"
+        android:textColor="#fff"
+        android:background="@drawable/border"
+        android:onClick="toUSD"/>
+
+    <Button
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btnrpusd"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/semibold"
+        android:layout_marginTop="10dp"
+        android:text="Rp > yen"
+        android:textSize="20sp"
+        android:id="@+id/btnrpyen"
+        android:textColor="#fff"
+        android:background="@drawable/button"
+        android:onClick="toYEN"/>
+
+    <Button
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btnrpyen"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/semibold"
+        android:layout_marginTop="10dp"
+        android:text="Rp > euro"
+        android:textSize="20sp"
+        android:id="@+id/btnrpeuro"
+        android:textColor="#fff"
+        android:background="@drawable/border"
+        android:onClick="toEuro"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnrpyen"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="-26dp"
+        android:src="@drawable/group2" />
+
+</RelativeLayout>
